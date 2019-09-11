@@ -1,24 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ZZ-ua-8GZ">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ちゃっと-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="chat_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1e1-Oj-RR0">
+                                <rect key="frame" x="0.0" y="602" width="375" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AGD-69-8EV">
+                                <rect key="frame" x="16" y="82" width="343" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ur name here :))))" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Oj-7k-jZM">
+                                <rect key="frame" x="16" y="624" width="159" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ur message type here!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifY-Fj-ejM">
+                                <rect key="frame" x="16" y="681" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHf-VO-xnh">
+                                <rect key="frame" x="315" y="624" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="3Hj-Mg-4ba"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um5-DN-gQH">
+                                <rect key="frame" x="301" y="44" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="クリア！"/>
+                                <connections>
+                                    <action selector="clearChat:" destination="BYZ-38-t0r" eventType="touchDown" id="DQC-5F-4Vj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="21k-Gp-u7l" appends="YES" id="DjX-eP-O66"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="ちゃっと" image="dolphin-logo" id="ess-nX-lUM">
+                        <inset key="imageInsets" minX="0.0" minY="-8" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="messageField" destination="ifY-Fj-ejM" id="SW6-fc-mtM"/>
+                        <outlet property="nameField" destination="9Oj-7k-jZM" id="JXd-kQ-7L8"/>
+                        <outlet property="sendButton" destination="tHf-VO-xnh" id="dwb-EY-cVu"/>
+                        <outlet property="sendView" destination="1e1-Oj-RR0" id="dDa-bc-qM2"/>
+                        <outlet property="textView" destination="AGD-69-8EV" id="bh0-DO-UpE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="21k-Gp-u7l"/>
             </objects>
+            <point key="canvasLocation" x="1037.5999999999999" y="-143.3497536945813"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UDl-5Y-j6b">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1ZZ-ua-8GZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHN-Hs-GQR">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wFi-Et-xjU"/>
+                        <segue destination="hY0-xV-tvL" kind="relationship" relationship="viewControllers" id="fly-Ly-jTa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGf-56-ELI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="132.26600985221674"/>
+        </scene>
+        <!--おえかき-->
+        <scene sceneID="hgE-80-oLF">
+            <objects>
+                <viewController id="hY0-xV-tvL" customClass="DrawingViewController" customModule="chat_app" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ufp-zy-LKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rq-yj-EcK">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Stamp" id="Iv8-WU-HBW">
+                                        <connections>
+                                            <action selector="pickStamp:" destination="hY0-xV-tvL" id="zKU-iS-ycy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Blur" id="Rv4-Kt-Hf7">
+                                        <connections>
+                                            <action selector="pickBlur:" destination="hY0-xV-tvL" id="nac-SI-qug"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Neon" id="Idr-od-fU6">
+                                        <connections>
+                                            <action selector="pickNeon:" destination="hY0-xV-tvL" id="rOd-7s-Psm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Undo" id="8X2-Tl-rvF">
+                                        <connections>
+                                            <action selector="undo:" destination="hY0-xV-tvL" id="JGY-eO-eWR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Redo" id="kez-mh-Yjg">
+                                        <connections>
+                                            <action selector="redo:" destination="hY0-xV-tvL" id="8xe-xJ-Jzj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear" id="1m4-HU-hvb">
+                                        <connections>
+                                            <action selector="clear:" destination="hY0-xV-tvL" id="gpx-pJ-yG0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-GS-vcV">
+                                <rect key="frame" x="0.0" y="641" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="ぺん" id="enj-IH-Jbx">
+                                        <connections>
+                                            <action selector="pickPen:" destination="hY0-xV-tvL" id="sLf-2k-rm9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="けす" id="2l4-LN-wfL">
+                                        <connections>
+                                            <action selector="pickEraser:" destination="hY0-xV-tvL" id="P1q-gZ-QEn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="直線" id="ljc-rY-YpZ">
+                                        <connections>
+                                            <action selector="pickLine:" destination="hY0-xV-tvL" id="sZY-mp-GZo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="矢印" id="7Zv-0B-vH3">
+                                        <connections>
+                                            <action selector="pickArrow:" destination="hY0-xV-tvL" id="ZIr-ha-YzP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="■" id="Slf-eE-smo">
+                                        <connections>
+                                            <action selector="pickRectangeFill:" destination="hY0-xV-tvL" id="Zxi-CS-7GO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="□" id="Rqk-Rd-GVD">
+                                        <connections>
+                                            <action selector="pickRectangleStroke:" destination="hY0-xV-tvL" id="Yjo-KN-4tE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="●" id="SoC-Ns-xgu">
+                                        <connections>
+                                            <action selector="pickEllipseFill:" destination="hY0-xV-tvL" id="pKv-pT-KYt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="○" id="Nrl-r4-cBt">
+                                        <connections>
+                                            <action selector="pickEllipseStroke:" destination="hY0-xV-tvL" id="IT6-Ba-Fz6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gy-vL-tNt">
+                                <rect key="frame" x="33" y="692" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="signUpBtn_click:" destination="hY0-xV-tvL" eventType="touchDown" id="wny-IM-WX9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUY-LA-VDg" customClass="SketchView" customModule="Sketch">
+                                <rect key="frame" x="0.0" y="88" width="375" height="553"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2624235i" translatesAutoresizingMaskIntoConstraints="NO" id="G4u-xk-wDz" userLabel="imageView">
+                                <rect key="frame" x="0.0" y="88" width="375" height="553"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2624235i" translatesAutoresizingMaskIntoConstraints="NO" id="uqz-2d-jI3">
+                                <rect key="frame" x="258" y="685" width="117" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="x2R-zG-fyh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="おえかき" image="dolphin-logo-filled" id="1ya-O3-Lnt"/>
+                    <connections>
+                        <outlet property="imageView" destination="G4u-xk-wDz" id="8Z9-Iq-2Nl"/>
+                        <outlet property="sketchView" destination="gUY-LA-VDg" id="vuO-1R-jFm"/>
+                        <outlet property="testImage" destination="uqz-2d-jI3" id="BLh-Xg-FSV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8E-VV-dek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.5999999999999" y="538.66995073891633"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="2624235i" width="575" height="444"/>
+        <image name="dolphin-logo" width="100" height="100"/>
+        <image name="dolphin-logo-filled" width="100" height="100"/>
+    </resources>
 </document>

@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "スクリーンショット 2018-11-14 22.09.48.png",
       "scale" : "2x"
     },
     {
